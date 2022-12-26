@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.totalplay.com.biblioteca.dao.AutorDAO;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -26,7 +28,15 @@ public class Autor {
     @OneToMany(mappedBy = "autor")
     private List<Libro> libros;
     
-    
+       
+	public Autor(AutorDAO autordao) {
+		super();
+		this.id =autordao.getId();
+		this.nombre = autordao.getNombre();
+		this.apellidos = autordao.getNombre();
+		this.telefono = autordao.getTelefono();
+		
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -51,12 +61,5 @@ public class Autor {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public List<Libro> getLibros() {
-		return libros;
-	}
-	public void setLibros(List<Libro> libros) {
-		this.libros = libros;
-	}
-
-    
+   
 }

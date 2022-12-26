@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.totalplay.com.biblioteca.dao.LibroDAO;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -31,6 +33,22 @@ public class Libro {
 	private LocalDate fechaEdicion;
 	@ManyToOne
 	private Autor autor;
+	
+		
+	
+	
+	public Libro(LibroDAO librodao) {
+		super();
+		this.id = librodao.getId();
+		this.isbn = librodao.getIsbn();
+		this.nombre = librodao.getNombre();
+		this.editorial = librodao.getEditorial();
+		this.genero = librodao.getGenero();
+		this.numeroPaginas = librodao.getNumeroPaginas();
+		this.precio = librodao.getPrecio();
+		this.fechaEdicion = librodao.getFechaEdicion();
+		this.autor = new Autor(librodao.getAutorDto());
+	}
 	public Integer getId() {
 		return id;
 	}
