@@ -20,7 +20,7 @@ public class AutorFab {
 		return new AutorDAO(autor);
 	}
 
-	public List<AutorDAO> crearautoresdaoL(List<Autor> listaautores){
+	public List<AutorDAO> crearautoresdao(List<Autor> listaautores){
 		List<AutorDAO> autoresdao= new ArrayList<>();
 		listaautores.stream().forEach(
 				autor-> {
