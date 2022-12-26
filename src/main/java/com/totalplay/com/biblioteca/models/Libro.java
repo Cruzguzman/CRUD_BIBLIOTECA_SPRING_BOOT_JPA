@@ -34,11 +34,7 @@ public class Libro {
 	@ManyToOne
 	private Autor autor;
 	
-		
-	
-	
 	public Libro(LibroDAO librodao) {
-		super();
 		this.id = librodao.getId();
 		this.isbn = librodao.getIsbn();
 		this.nombre = librodao.getNombre();
