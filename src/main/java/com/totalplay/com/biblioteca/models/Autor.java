@@ -9,21 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.totalplay.com.biblioteca.dao.AutorDAO;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "Autores")
 public class Autor {
 	@Id
@@ -32,8 +26,8 @@ public class Autor {
 	private String nombre;
 	private String apellidos;
 	private String telefono;
-    @OneToMany(mappedBy = "autor")
-    private List<Libro> libros;
+    //@OneToMany(mappedBy = "autor")
+    //private List<Libro> libros;
     
     
     public Autor() {
@@ -43,7 +37,7 @@ public class Autor {
 	public Autor(AutorDAO autordao) {
 		this.id =autordao.getId();
 		this.nombre = autordao.getNombre();
-		this.apellidos = autordao.getNombre();
+		this.apellidos = autordao.getApellidos();
 		this.telefono = autordao.getTelefono();
 		
 	}
@@ -90,13 +84,6 @@ public class Autor {
 	}
 
 
-	public List<Libro> getLibros() {
-		return libros;
-	}
 
-
-	public void setLibros(List<Libro> libros) {
-		this.libros = libros;
-	}
 
 }

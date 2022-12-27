@@ -1,13 +1,8 @@
 package com.totalplay.com.biblioteca.dao;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.totalplay.com.biblioteca.models.Autor;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @Data
