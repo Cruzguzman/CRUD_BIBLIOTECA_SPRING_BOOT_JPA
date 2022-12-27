@@ -1,10 +1,10 @@
 package com.totalplay.com.biblioteca.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,4 +39,21 @@ public class AutorController {
 	public ResponseEntity<AutorDAO> buscarporid(@PathVariable Integer id){
 		return new ResponseEntity<>(autorservice.buscarporid(id),HttpStatus.OK);
 	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> eliminarporid(@PathVariable Integer id){
+		
+		try {
+			autorservice.eliminarporid(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		
+		} catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+			
+			
+		
+	}
+	
 }

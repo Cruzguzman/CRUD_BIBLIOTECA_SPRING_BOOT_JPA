@@ -22,7 +22,7 @@ public class LibroDAO {
     private BigDecimal precio;
     private LocalDate fechaEdicion;
     private AutorDAO autorDto;
-    //private Integer idAutor;
+    private Integer idAutor;
     
     
 	public LibroDAO(Libro libro) {
