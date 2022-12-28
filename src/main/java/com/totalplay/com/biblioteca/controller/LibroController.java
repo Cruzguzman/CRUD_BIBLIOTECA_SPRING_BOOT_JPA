@@ -1,5 +1,7 @@
 package com.totalplay.com.biblioteca.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +34,10 @@ public class LibroController {
 		Autor autor;
 		
 		return new ResponseEntity<> (libroservice.insertar(librodao), HttpStatus.OK);
+	}
+	
+	public List<LibroDAO> enlistarlibros(){
+		return librofab.crearlibrosdto(librorepository.findAll());
 	}
 	
 	
