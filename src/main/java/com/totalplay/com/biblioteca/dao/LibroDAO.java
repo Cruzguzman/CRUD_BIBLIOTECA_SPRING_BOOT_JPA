@@ -129,6 +129,16 @@ public class LibroDAO {
 	}
 
 
+	public Integer getIdAutor() {
+		return idAutor;
+	}
+
+
+	public void setIdAutor(Integer idAutor) {
+		this.idAutor = idAutor;
+	}
+
+
   
     
     
