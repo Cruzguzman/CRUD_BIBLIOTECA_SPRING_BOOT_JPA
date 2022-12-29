@@ -24,6 +24,9 @@ public class LibroDAO {
     private AutorDAO autorDto;
     private Integer idAutor;
     
+    public LibroDAO() {
+    	
+    }
     
 	public LibroDAO(Libro libro) {
 		this.id = libro.getId();

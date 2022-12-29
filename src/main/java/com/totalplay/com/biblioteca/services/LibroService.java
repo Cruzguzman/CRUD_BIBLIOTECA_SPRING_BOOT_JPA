@@ -13,13 +13,15 @@ import com.totalplay.com.biblioteca.repository.LibroRepository;
 @Service
 public class LibroService {
 	@Autowired
-	private LibroRepository librorepository;
-	@Autowired
-	private LibroFab librofab;
-	@Autowired
-	private AutorRepository autorrepository;
-	@Autowired
-	private AutorFab autorfab;
+    private LibroRepository librorepository;
+    @Autowired
+    private LibroFab librofab;
+
+    @Autowired
+    private AutorRepository autorrepository;
+
+    @Autowired
+    private AutorFab autorfab;
 	
 	public LibroDAO insertar(LibroDAO librodao) {
 		Autor autor=autorrepository.findById(librodao.getIdAutor()).get();
